@@ -1,0 +1,25 @@
+from django.db import models
+
+class candidates(models.Model):
+    candidate_id = models.AutoField(primary_key=True)
+    timestamp = models.DateTimeField()
+    email = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    contact_no = models.CharField(max_length=30)
+    age = models.PositiveIntegerField()
+    recent_company = models.CharField(max_length=100)
+    job = models.CharField(max_length=100)
+    current_ctc = models.CharField(max_length=20)
+    fixed_component_in_ctc = models.CharField(max_length=20)
+    work_experience_in_months = models.CharField(max_length=20)
+    work_6_days_a_week = models.BooleanField()
+    willing_to_relocate_mumbai = models.BooleanField()
+    verbal_eng_skill_rate = models.PositiveIntegerField()
+    skills_you_have_worked = models.CharField(max_length=200)
+    industry_you_have_worked = models.CharField(max_length=100)
+    profile_you_like_to_work = models.CharField(max_length=100)
+    matters_most_while_selecting_job = models.CharField(max_length=100)
+    latest_resume = models.DateField()
+    def __str__(self):
+        return str(self.name)

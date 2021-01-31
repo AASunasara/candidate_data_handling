@@ -1,0 +1,17 @@
+{% load crispy_forms_tags %}
+<!-- {% load django_tables2 %} -->
+{% render_table table %}
+
+{% for message in messages %}
+{% if "home" in message.tags %}
+    <div role="alert">
+        <br><li>{{ message }}</li>
+    </div>
+{% endif %}
+{% endfor %}
+<form method="POST">
+    {% csrf_token %}
+    <button style="padding: 10px; position: relative; left: 40%;">Syncup</button>
+</form>
+<a style="padding: 10px; position: relative; left: 20%;" href="{% url 'candidates_form' %}">Add candidates manually</a>
+<a style="padding: 10px; position: relative; left: 40%;" href="{% url 'upload_csv' %}">Upload the CSV file</a>

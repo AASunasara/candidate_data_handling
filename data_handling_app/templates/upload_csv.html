@@ -1,0 +1,26 @@
+{% for message in messages %}
+{% if "process_csv" in message.tags %}
+    <div role="alert">
+        <br><li>{{ message }}</li>
+    </div>
+{% endif %}
+{% endfor %}
+
+<form action="{% url "upload_csv" %}" method="POST" enctype="multipart/form-data" style="position: relative; left: 40%;"> 
+    {% csrf_token %}
+    <div>
+        <label for="name">File: </label>
+        <div>
+            <input type="file" name="csv_file" id="csv_file" required="True">
+        </div>                    
+    </div>
+    <div>                    
+        <div style="margin-bottom:10px;">
+            <button style="position: relative; left: 40px;"> <span style="margin-right:5px;"></span>Upload File</button>
+        </div> 
+    </div>
+    <div>
+        <a style="padding: 10px;" href="{% url 'home' %}">Home</a>
+        <a style="padding: 10px;" href="{% url 'candidates_form' %}">Add candidates manually</a>
+    </div>
+</form>
