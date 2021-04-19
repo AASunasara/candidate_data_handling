@@ -1,6 +1,6 @@
-# candidate_data_handling
+# Handling Candidate's Data
 
-1. This is the Django project about following Google form using google api so every input to the google spreadsheet attached to that google form will sync up to the DATABASE.
+1. This is the Django project about "following Google form" using google api so every input to the google spreadsheet attached to that google form will sync up to the DATABASE.
 
 2. Also there is a feature for Provide CSV file and upload all candidates data to the same DATABASE.
 
